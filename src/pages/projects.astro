@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+type Project = {
+    title: string;
+    image: string;
+    link: string;
+};
+
+const projects: Project[] = [
+    { title: "Career Quest", image: "...", link: "..."},
+    { title: "Null Pointers Design Challenge", image: "...", link: "..."}
+]; 
+---
+
+<BaseLayout title="Projects">
+    <h1>Projects</h1>
+    {projects.map(project => (
+        <ProjectCard title={project.title} image={project.image} page={project.link} />
+    ))}
+</BaseLayout>
