@@ -6,6 +6,7 @@ interface Props {
 const { title } = Astro.props;
 
 import Header from '../components/Header.astro';
+import '../styles/global.css';
 ---
 
 <html lang="en"> 
@@ -22,14 +23,3 @@ import Header from '../components/Header.astro';
         <slot />
     </body>
 </html>
-
-<style>
-    body {
-        font-family: "Times New Roman", serif;
-        color: rgba(255, 255, 255, 0.801);
-        background-color: #342a5a;
-        text-align: center;
-        padding: 0; 
-        margin: 0; 
-    }
-</style>

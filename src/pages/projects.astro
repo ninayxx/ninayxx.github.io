@@ -9,14 +9,30 @@ type Project = {
 };
 
 const projects: Project[] = [
-    { title: "Career Quest", image: "...", link: "..."},
-    { title: "Null Pointers Design Challenge", image: "...", link: "..."}
+    { title: "Sleep Tracker Robot", image: "...", link: "/projects/sleep-tracker-robot"}, 
+    { title: "Quadruped Spider Robot", image: "...", link: "/projects/quadruped-spider-robot"}, 
+    { title: "Null Pointers Design Challenge", image: "...", link: "/projects/null-pointers-design-challenge"},
+    { title: "Career Quest", image: "...", link: "/projects/career-quest"},
+    { title: "Linux Hardening Script", image: "...", link: "/projects/linux-hardening-script"}
 ]; 
 ---
 
 <BaseLayout title="Projects">
     <h1>Projects</h1>
-    {projects.map(project => (
-        <ProjectCard title={project.title} image={project.image} page={project.link} />
-    ))}
+    <div class="grid">
+        {projects.map(project => (
+            <ProjectCard title={project.title} image={project.image} page={project.link} />
+        ))}
+    </div>
 </BaseLayout>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem; 
+        max-width: 1000px; 
+        margin: 0 auto;
+        padding: 0 1rem; 
+    }
+</style>

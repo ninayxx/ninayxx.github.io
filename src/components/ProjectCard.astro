@@ -8,7 +8,7 @@ interface Props {
 const { title, image, page } = Astro.props;
 ---
 
-<a href={page} class="card"> 
+<a href={page} class="box card"> 
     <h3> {title} </h3>
     <img src={image} alt="" />
 </a>
@@ -17,15 +17,16 @@ const { title, image, page } = Astro.props;
     .card {
         display: block;
         text-decoration: none;
-        color: inherit;
-        padding: 1rem;
-        border: 1px solid #fdfcfc;
-        border-radius: 0.5rem;
         transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
         transform: translateY(-4px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+        width: 100%;
+        border-radius: 4px;
     }
 </style>

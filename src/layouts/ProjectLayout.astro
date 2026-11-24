@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const { frontmatter } = Astro.props; 
+---
+
+<BaseLayout title={ frontmatter.title }> 
+    <h1>{ frontmatter.title }</h1>
+    <section class="box">
+        <h2>Description</h2>
+        <p>{ frontmatter.description }</p>
+    </section>
+    
+    <section class="box links">
+        {frontmatter.source && <p>Source Code: <a href={frontmatter.source}>{frontmatter.source}</a></p>}
+        {frontmatter.youtube && (
+            <section class="box">
+                <h2>Demo</h2>
+                <iframe
+                    class="video"
+                    src={ `https://www.youtube.com/embed/${frontmatter.demo}` }
+                    title={`${frontmatter.title} Demo`}
+                    allowfullscreen
+                ></iframe>
+            </section>
+        )}
+    </section>
+
+    <section class="box dev">
+        <h2>Development Challenges</h2>
+        <slot /> 
+    </section>
+</BaseLayout>
+
+<style>
+    main { 
+        padding: 0 1rem;
+    }
+    h1 { 
+        text-align: center; 
+    }
+    .box { 
+        text-align: left; 
+    }
+    .dev :global(img) { 
+        max-width: 100%; 
+        border-radius: 4px; 
+    }
+    .video { 
+        width: 100%;
+        aspect-ratio: 16/9; 
+        border: none; 
+        border-radius: 4px;
+    }
+</style>

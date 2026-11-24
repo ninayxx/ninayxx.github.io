@@ -1,0 +1,28 @@
+:root {
+    --bg: #282337;
+    --box: rgba(255, 255, 255, 0.10);
+    --text: #ffffff; 
+    --link: #b9beff;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--text);
+    background-color: var(--bg);
+    margin: 0;
+    text-align: center;
+    a {
+        color: var(--link);
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
+
+.box {
+    background-color: var(--box);
+    border-radius: 8px; 
+    padding: 1.5rem 2rem;
+    margin: 1.5rem auto; 
+    max-width: 800px; 
+    line-height: 1.6;
+}
