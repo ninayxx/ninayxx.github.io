@@ -11,20 +11,24 @@ const { frontmatter } = Astro.props;
     </section>
     
     <section class="box links">
-        {frontmatter.source && <p>Source Code: <a href={frontmatter.source}>{frontmatter.source}</a></p>}
-        {frontmatter.youtube && (
-            <section class="box">
-                <h2>Demo</h2>
-                <iframe
-                    class="video"
-                    src={ `https://www.youtube.com/embed/${frontmatter.demo}` }
-                    title={`${frontmatter.title} Demo`}
-                    allowfullscreen
-                ></iframe>
-            </section>
-        )}
+        <h2>Relevant Links</h2>
+        {frontmatter.source && <p>Source Code: <a href={frontmatter.source} target="_blank" rel="noopener noreferrer">{frontmatter.source}</a></p>}
+        {frontmatter.game && <p>Game: <a href={frontmatter.game} target="_blank" rel="noopener noreferrer">{frontmatter.game}</a></p>}
+        {frontmatter.cad && <p>STEP Files: <a href={frontmatter.cad} target="_blank" rel="noopener noreferrer">{frontmatter.cad}</a></p>}
     </section>
 
+    {frontmatter.demo && (
+         <section class="box demo">
+        <h2>Demo Video:</h2>
+        <iframe
+            class="video"
+            src={ `https://www.youtube.com/embed/${frontmatter.demo}` }
+            title={`${frontmatter.title} Demo`}
+            allowfullscreen
+        ></iframe>
+        </section> 
+    )}
+    
     <section class="box dev">
         <h2>Development Challenges</h2>
         <slot /> 

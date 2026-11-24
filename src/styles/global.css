@@ -1,7 +1,7 @@
 :root {
-    --bg: #282337;
+    --bg: #271d52;
     --box: rgba(255, 255, 255, 0.10);
-    --text: #ffffff; 
+    --text: #fff5e0; 
     --link: #b9beff;
 }
 
@@ -23,6 +23,6 @@ body {
     border-radius: 8px; 
     padding: 1.5rem 2rem;
     margin: 1.5rem auto; 
-    max-width: 800px; 
+    max-width: 1000px; 
     line-height: 1.6;
 }

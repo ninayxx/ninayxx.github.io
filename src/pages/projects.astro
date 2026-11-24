@@ -9,11 +9,11 @@ type Project = {
 };
 
 const projects: Project[] = [
-    { title: "Sleep Tracker Robot", image: "...", link: "/projects/sleep-tracker-robot"}, 
-    { title: "Quadruped Spider Robot", image: "...", link: "/projects/quadruped-spider-robot"}, 
-    { title: "Null Pointers Design Challenge", image: "...", link: "/projects/null-pointers-design-challenge"},
-    { title: "Career Quest", image: "...", link: "/projects/career-quest"},
-    { title: "Linux Hardening Script", image: "...", link: "/projects/linux-hardening-script"}
+    { title: "Sleep Tracker Robot", image: "", link: "/projects/sleep-tracker"}, 
+    { title: "Quadruped Spider Robot", image: "", link: "/projects/quadruped-robot"}, 
+    { title: "Null Pointers Design Challenge", image: "", link: "/projects/null-pointers"},
+    { title: "Career Quest", image: "/assets/career-quest-bg.png", link: "/projects/career-quest"},
+    { title: "Linux Hardening Script", image: "", link: "/projects/linux-hardening-script"}
 ]; 
 ---
 
@@ -29,10 +29,10 @@ const projects: Project[] = [
 <style>
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem; 
-        max-width: 1000px; 
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1rem; 
+        max-width: 1600px; 
         margin: 0 auto;
-        padding: 0 1rem; 
+        padding: 0 2rem; 
     }
 </style>

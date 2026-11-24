@@ -8,14 +8,21 @@ interface Props {
 const { title, image, page } = Astro.props;
 ---
 
-<a href={page} class="box card"> 
+<a href={page} class="card"> 
+    {image && <img src={image} alt="" />}
     <h3> {title} </h3>
-    <img src={image} alt="" />
 </a>
 
 <style>
     .card {
-        display: block;
+        position: relative; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        border-radius: 12px; 
+        background: var(--box); 
         text-decoration: none;
         transition: transform 0.2s, box-shadow 0.2s;
     }
@@ -26,7 +33,36 @@ const { title, image, page } = Astro.props;
     }
 
     img {
-        width: 100%;
-        border-radius: 4px;
+       position: absolute;
+       inset: 0;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       transition: transform 0.3s;
+    }
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
+
+    h3 {
+        position: absolute;
+        inset: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 8px;
+        color: #211b72;
+        font-size: 2.25rem;
+        font-family: "Times New Roman", serif;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .card:hover h3 {
+        background: rgba(255, 255, 255, 0.25); 
+        color: transparent;
     }
 </style>
