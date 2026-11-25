@@ -1,8 +1,11 @@
 :root {
-    --bg: #271d52;
+    --bg: #2c2d30;
     --box: rgba(255, 255, 255, 0.10);
-    --text: #fff5e0; 
-    --link: #b9beff;
+    --text: #fefefe; 
+    --link: #9fc4ff;
+}
+h1 {
+    font-size: 3rem
 }
 
 body {

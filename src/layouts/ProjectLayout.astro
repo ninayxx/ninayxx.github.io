@@ -7,18 +7,20 @@ const { frontmatter } = Astro.props;
     <h1>{ frontmatter.title }</h1>
     <section class="box">
         <h2>Description</h2>
-        <p>{ frontmatter.description }</p>
+        <p class="desc">{ frontmatter.description }</p>
     </section>
     
-    <section class="box links">
+    {(frontmatter.source || frontmatter.game || frontmatter.cad) && (
+        <section class="box links">
         <h2>Relevant Links</h2>
-        {frontmatter.source && <p>Source Code: <a href={frontmatter.source} target="_blank" rel="noopener noreferrer">{frontmatter.source}</a></p>}
+        <p>Source Code: <a href={frontmatter.source} target="_blank" rel="noopener noreferrer">{frontmatter.source}</a></p>
         {frontmatter.game && <p>Game: <a href={frontmatter.game} target="_blank" rel="noopener noreferrer">{frontmatter.game}</a></p>}
         {frontmatter.cad && <p>STEP Files: <a href={frontmatter.cad} target="_blank" rel="noopener noreferrer">{frontmatter.cad}</a></p>}
-    </section>
+        </section>
+    )}
 
     {frontmatter.demo && (
-         <section class="box demo">
+        <section class="box demo">
         <h2>Demo Video:</h2>
         <iframe
             class="video"
@@ -28,9 +30,9 @@ const { frontmatter } = Astro.props;
         ></iframe>
         </section> 
     )}
-    
+
     <section class="box dev">
-        <h2>Development Challenges</h2>
+        <h2>Development Process</h2>
         <slot /> 
     </section>
 </BaseLayout>
@@ -41,6 +43,7 @@ const { frontmatter } = Astro.props;
     }
     h1 { 
         text-align: center; 
+        font-size: 3rem;
     }
     .box { 
         text-align: left; 
@@ -54,5 +57,8 @@ const { frontmatter } = Astro.props;
         aspect-ratio: 16/9; 
         border: none; 
         border-radius: 4px;
+    }
+    .desc {
+        white-space: pre-line;
     }
 </style>
